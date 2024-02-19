@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SMDesktop": {
+      "commandName": "Project",
+      "workingDirectory": "D:\\SMRecibos"
+    }
+  }
+}
