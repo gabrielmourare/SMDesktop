@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SMDesktopSetup", "..\SMDesktopSetup\SMDesktopSetup.vdproj", "{41A986BF-ED6B-4BF8-8C94-64FE8D2A981B}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SMDesktopSetup", "..\SMDesktopSetup\SMDesktopSetup.vdproj", "{298BDA30-8915-44A8-95EB-FE858FF6B7B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,8 +22,8 @@ Global
 		{E941A3E6-A9B4-434F-9DA9-35F67C1382B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E941A3E6-A9B4-434F-9DA9-35F67C1382B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E941A3E6-A9B4-434F-9DA9-35F67C1382B2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{41A986BF-ED6B-4BF8-8C94-64FE8D2A981B}.Debug|Any CPU.ActiveCfg = Debug
-		{41A986BF-ED6B-4BF8-8C94-64FE8D2A981B}.Release|Any CPU.ActiveCfg = Release
+		{298BDA30-8915-44A8-95EB-FE858FF6B7B8}.Debug|Any CPU.ActiveCfg = Debug
+		{298BDA30-8915-44A8-95EB-FE858FF6B7B8}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1093,7 +1093,7 @@ namespace SMDesktop
                     // Aqui você pode chamar o código para ler os dados da planilha.
                     // Exemplo de leitura utilizando o SpreadsheetLight:
                     DataTable dataTable = lerPlanilha(filePath);
-                    progressBar1.Value += 1;
+
 
                     foreach (DataRow row in dataTable.Rows)
                     {
@@ -1191,11 +1191,15 @@ namespace SMDesktop
                         GravaRecibos(sessoes, reciboIR, reciboSubLoc, umPorFolha, nomePaciente, dtemis);
                         sessoes.Clear();
 
-                        
+                        if (progressBar1.Value < progressBar1.Maximum)
+                        {
+                            progressBar1.Value += 10;
+                        }
 
-                    }                    
 
-                    if(progressBar1.Value == 100)
+                    }
+                    progressBar1.Value = progressBar1.Maximum;
+                    if (progressBar1.Value == progressBar1.Maximum)
                     {
                         MessageBox.Show("Recibos emitidos com sucesso!");
                     }
@@ -1262,7 +1266,7 @@ namespace SMDesktop
                     foreach (string campo in campos)
                     {
                         dataTable.Columns.Add(campo, typeof(string));
-                        progressBar1.Value += 1;
+
                     }
 
                     while (!reader.EndOfStream)
@@ -1278,7 +1282,7 @@ namespace SMDesktop
                         }
 
                         dataTable.Rows.Add(dataRow);
-                        progressBar1.Value += 1;
+
                     }
                 }
 
@@ -1396,7 +1400,7 @@ namespace SMDesktop
             string corpo = string.Empty;
             string destinatario = "sm.oseudesenvolvimento@gmail.com";
 
-            EnviarEmailComAnexo(assunto,corpo,destinatario,destinoUnico);
+            EnviarEmailComAnexo(assunto, corpo, destinatario, destinoUnico);
         }
 
         private void ImprimeUmPdfPorSessao(string nomePaciente, string cpf, string valorExtenso, string cid, string dtNascimento, List<Sessao> sessoes, DateTime dtemissao)
@@ -1406,7 +1410,7 @@ namespace SMDesktop
 
 
             string pastaTemporaria = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "RECIBOSSM", $"{nomePaciente + DateTime.Now.Ticks}.pdf");
-           
+
             Directory.CreateDirectory(pastaTemporaria);
 
             List<Document> documentos = new List<Document>();
@@ -1521,13 +1525,13 @@ namespace SMDesktop
                     }
                 }
             }
-           string assunto = String.Format("Recibo - {0}", nomePaciente);
+            string assunto = String.Format("Recibo - {0}", nomePaciente);
             string corpo = string.Empty;
             string destinatario = "sm.oseudesenvolvimento@gmail.com";
 
             EnviarEmailComAnexo(assunto, corpo, destinatario, arquivoZip);
-           
-             //Excluir a pasta temporária
+
+            //Excluir a pasta temporária
             Directory.Delete(pastaTemporaria, true);
         }
 
@@ -1631,6 +1635,89 @@ namespace SMDesktop
             string destinatario = "sm.oseudesenvolvimento@gmail.com";
 
             EnviarEmailComAnexo(assunto, corpo, destinatario, destinoUnico);
+        }
+
+        private void ImprimeReciboSubLocacao(string nomePaciente, string cpf, string valorExtenso, string cid, string dtNascimento, List<Sessao> sessoes, DateTime dtemissao)
+        {
+            string destinoUnico = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "RECIBOSSM", nomePaciente + "-SUBLOC" + ".pdf");
+            string template = @"D:\Projects\SMDesktop\RECIBO_MODELO_SUBLOC.pdf";
+
+            string nomeValue = string.Empty;
+            string cpfValue = string.Empty;
+            string valorExtensoValue = string.Empty;
+            decimal valorTotalValue = 0;
+            string cidValue = string.Empty;
+            string dtNascValueUnico = string.Empty;
+            DateTime periodoSubLocValue = DateTime.MinValue;
+            string dtEmissao = string.Empty;
+
+            string id = string.Empty;
+
+
+            foreach (Sessao sessao in sessoes)
+            {
+                nomeValue = nomePaciente.ToString();
+                cpfValue = cpf.ToString();
+                cidValue = cid.ToString();
+                valorTotalValue += Decimal.Parse(Decimal.Parse(sessao.Valor.ToString()).ToString("F2"));
+                periodoSubLocValue = DateTime.Parse(sessao.DataSessao.ToString());
+                valorExtensoValue = Utilidades.Converter.toExtenso(decimal.Round(Decimal.Parse(valorTotalValue.ToString("F2")), 2, MidpointRounding.AwayFromZero));
+
+                if (!string.IsNullOrEmpty(dtNascimento.ToString()))
+                {
+                    dtNascValueUnico = DateTime.Parse(dtNascimento.ToString()).ToString("dd/MM/yyyy");
+                }
+
+                if (!string.IsNullOrEmpty(dtemissao.ToString()))
+                {
+                    dtEmissao = DateTime.Parse(dtemissao.ToString()).ToString("dd/MM/yyyy");
+                }           
+
+
+            }
+
+            using (PdfReader reader = new PdfReader(template))
+            {
+                using (PdfWriter wpdf = new PdfWriter(destinoUnico, new WriterProperties().SetPdfVersion(PdfVersion.PDF_2_0)))
+                {
+
+                    var pdfDocument = new PdfDocument(reader, wpdf);
+
+                    var document = new iText.Layout.Document(pdfDocument, PageSize.A4);
+
+                    Paragraph nomePaciente1Paragraph = new Paragraph(nomeValue);
+                    Paragraph cpfParagraph = new Paragraph(cpfValue);
+                    Paragraph valorExtensoParagraph = new Paragraph(valorExtensoValue);
+                    Paragraph valorTotalParagraph = new Paragraph(valorTotalValue.ToString());
+                    Paragraph cidParagraph = new Paragraph(cidValue);
+                    Paragraph dtAssinaturaParagraph = new Paragraph(dtEmissao);
+                    Paragraph anoMesParagraph = new Paragraph(String.Format("{0}", periodoSubLocValue.ToString("MM/yyyy")));
+
+                    Table tableSessoes = new Table(1);
+
+                    nomePaciente1Paragraph.SetFixedPosition(140, 610, 300);
+                    cidParagraph.SetFixedPosition(100, 530, 300);
+                    cpfParagraph.SetFixedPosition(445, 610, 300);
+                    valorExtensoParagraph.SetFixedPosition(140, 590, 300);
+                    valorTotalParagraph.SetFixedPosition(355, 655, 300);
+                    valorTotalParagraph.SetFontSize(22);
+                    dtAssinaturaParagraph.SetFixedPosition(335, 475, 300);
+                    tableSessoes.SetFixedPosition(484, 570, 300);
+                    tableSessoes.SetFontSize(11);
+
+                    tableSessoes.AddCell(new Cell(2, 1).Add(anoMesParagraph).SetBorder(Border.NO_BORDER));
+
+                    document.Add(nomePaciente1Paragraph);
+                    document.Add(cpfParagraph);
+                    document.Add(valorExtensoParagraph);
+                    document.Add(valorTotalParagraph);
+                    document.Add(cpfParagraph);
+                    document.Add(dtAssinaturaParagraph);
+                    document.Add(tableSessoes);
+                    document.Close();
+
+                }
+            }
         }
 
         private void EnviarEmailComAnexo(string assunto, string corpo, string destinatario, string caminhoAnexo)
