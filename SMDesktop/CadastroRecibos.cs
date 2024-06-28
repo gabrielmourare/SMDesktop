@@ -109,15 +109,18 @@ namespace SMDesktop
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            DateTime dtSessao = DateTime.Parse(txtDtSessao.Text);
+            if (!string.IsNullOrEmpty(txtDtSessao.Text))
+            {
+                DateTime dtSessao = DateTime.Parse(txtDtSessao.Text);
 
-            ListViewItem item = new ListViewItem(dtSessao.ToString("dd/MM/yyyy"));
+                ListViewItem item = new ListViewItem(dtSessao.ToString("dd/MM/yyyy"));
 
-            lstViewDatas.Items.Add(item);
+                lstViewDatas.Items.Add(item);
 
-            lstViewDatas.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                lstViewDatas.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
 
-            txtDtSessao.Text = string.Empty;
+                txtDtSessao.Text = string.Empty;
+            }
 
         }
 
@@ -153,6 +156,11 @@ namespace SMDesktop
                 return;
             }
 
+            if(lstViewDatas.Items.Count == 0 && !chkReciboIR.Checked || !chkSubloc.Checked)
+            {
+                MessageBox.Show("Nenhuma sessão adicionada!");
+                return;
+            }
 
 
             bool gerado = false;
@@ -258,6 +266,7 @@ namespace SMDesktop
             Utilidades utilidades = new Utilidades();
 
             utilidades.LimpaFormulario(this);
+            progressBar1.Value = 0;
         }
 
         private void txtValor_TextChanged(object sender, EventArgs e)
@@ -1202,6 +1211,7 @@ namespace SMDesktop
                     if (progressBar1.Value == progressBar1.Maximum)
                     {
                         MessageBox.Show("Recibos emitidos com sucesso!");
+                        progressBar1.Value = 0;
                     }
                 }
             }
@@ -1248,6 +1258,11 @@ namespace SMDesktop
             if (reciboIR)
             {
                 ImprimeReciboIR(dbPaciente.Nome, dbPaciente.CPF, Utilidades.Converter.toExtenso(sessaoValor), dbPaciente.CIDHD, dbPaciente.DataAniversario.ToString("dd/MM/yyyy"), sessoes, dtEmis);
+            }
+
+            if (reciboSubLoc)
+            {
+                ImprimeReciboSubLocacao(dbPaciente.Nome, dbPaciente.CPF, Utilidades.Converter.toExtenso(sessaoValor), dbPaciente.CIDHD, dbPaciente.DataAniversario.ToString("dd/MM/yyyy"), sessoes, dtEmis);
             }
 
         }
@@ -1671,7 +1686,7 @@ namespace SMDesktop
                 if (!string.IsNullOrEmpty(dtemissao.ToString()))
                 {
                     dtEmissao = DateTime.Parse(dtemissao.ToString()).ToString("dd/MM/yyyy");
-                }           
+                }
 
 
             }

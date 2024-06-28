@@ -82,6 +82,8 @@
             btnCarregarPlanilha = new Button();
             progressBar1 = new ProgressBar();
             bindingSource1 = new BindingSource(components);
+            chkImprimeTela = new CheckBox();
+            chkEmissaoSessao = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)dtGridRecibos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
@@ -268,9 +270,9 @@
             btnGeraRecibos.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnGeraRecibos.Location = new Point(806, 236);
             btnGeraRecibos.Name = "btnGeraRecibos";
-            btnGeraRecibos.Size = new Size(162, 33);
+            btnGeraRecibos.Size = new Size(111, 33);
             btnGeraRecibos.TabIndex = 20;
-            btnGeraRecibos.Text = "Gravar Recibos";
+            btnGeraRecibos.Text = "Gravar";
             btnGeraRecibos.UseVisualStyleBackColor = true;
             btnGeraRecibos.Click += btnGeraRecibos_Click;
             // 
@@ -455,11 +457,11 @@
             // btnLimpa
             // 
             btnLimpa.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLimpa.Location = new Point(974, 236);
+            btnLimpa.Location = new Point(923, 236);
             btnLimpa.Name = "btnLimpa";
-            btnLimpa.Size = new Size(162, 33);
+            btnLimpa.Size = new Size(107, 33);
             btnLimpa.TabIndex = 29;
-            btnLimpa.Text = "Limpa";
+            btnLimpa.Text = "Limpar";
             btnLimpa.UseVisualStyleBackColor = true;
             btnLimpa.Click += btnLimpa_Click;
             // 
@@ -526,7 +528,7 @@
             // 
             chkSubloc.AutoSize = true;
             chkSubloc.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            chkSubloc.Location = new Point(451, 583);
+            chkSubloc.Location = new Point(457, 583);
             chkSubloc.Name = "chkSubloc";
             chkSubloc.Size = new Size(166, 25);
             chkSubloc.TabIndex = 38;
@@ -538,7 +540,7 @@
             // 
             chkOP.AutoSize = true;
             chkOP.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            chkOP.Location = new Point(321, 583);
+            chkOP.Location = new Point(299, 583);
             chkOP.Name = "chkOP";
             chkOP.Size = new Size(124, 25);
             chkOP.TabIndex = 39;
@@ -550,25 +552,47 @@
             // 
             btnCarregarPlanilha.Location = new Point(15, 235);
             btnCarregarPlanilha.Name = "btnCarregarPlanilha";
-            btnCarregarPlanilha.Size = new Size(166, 33);
+            btnCarregarPlanilha.Size = new Size(110, 33);
             btnCarregarPlanilha.TabIndex = 40;
-            btnCarregarPlanilha.Text = "Carregar Planilha";
+            btnCarregarPlanilha.Text = "Carregar CSV";
             btnCarregarPlanilha.UseVisualStyleBackColor = true;
             btnCarregarPlanilha.Click += btnCarregarPlanilha_Click;
             // 
             // progressBar1
             // 
-            progressBar1.Location = new Point(187, 235);
+            progressBar1.Location = new Point(131, 245);
             progressBar1.Maximum = 500;
             progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(407, 33);
+            progressBar1.Size = new Size(407, 23);
             progressBar1.TabIndex = 41;
+            // 
+            // chkImprimeTela
+            // 
+            chkImprimeTela.AutoSize = true;
+            chkImprimeTela.Location = new Point(748, 56);
+            chkImprimeTela.Name = "chkImprimeTela";
+            chkImprimeTela.Size = new Size(115, 19);
+            chkImprimeTela.TabIndex = 42;
+            chkImprimeTela.Text = "Imprime da Tela?";
+            chkImprimeTela.UseVisualStyleBackColor = true;
+            // 
+            // chkEmissaoSessao
+            // 
+            chkEmissaoSessao.AutoSize = true;
+            chkEmissaoSessao.Location = new Point(748, 81);
+            chkEmissaoSessao.Name = "chkEmissaoSessao";
+            chkEmissaoSessao.Size = new Size(156, 19);
+            chkEmissaoSessao.TabIndex = 43;
+            chkEmissaoSessao.Text = "Dt Emissão Igual Sessão?";
+            chkEmissaoSessao.UseVisualStyleBackColor = true;
             // 
             // CadastroRecibos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1191, 634);
+            Controls.Add(chkEmissaoSessao);
+            Controls.Add(chkImprimeTela);
             Controls.Add(progressBar1);
             Controls.Add(btnCarregarPlanilha);
             Controls.Add(chkOP);
@@ -698,5 +722,7 @@
         private Button btnCarregarPlanilha;
         private ProgressBar progressBar1;
         private BindingSource bindingSource1;
+        private CheckBox chkImprimeTela;
+        private CheckBox chkEmissaoSessao;
     }
 }

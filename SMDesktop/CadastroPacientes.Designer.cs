@@ -79,100 +79,94 @@ namespace SMDesktop
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(16, 65);
+            label1.Location = new Point(14, 49);
             label1.Name = "label1";
-            label1.Size = new Size(50, 20);
+            label1.Size = new Size(40, 15);
             label1.TabIndex = 0;
             label1.Text = "Nome";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(251, 12);
+            label3.Location = new Point(220, 9);
             label3.Name = "label3";
-            label3.Size = new Size(145, 20);
+            label3.Size = new Size(114, 15);
             label3.TabIndex = 2;
             label3.Text = "Data de Nascimento";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(18, 128);
+            label4.Location = new Point(16, 96);
             label4.Name = "label4";
-            label4.Size = new Size(46, 20);
+            label4.Size = new Size(36, 15);
             label4.TabIndex = 3;
             label4.Text = "Email";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(249, 65);
+            label5.Location = new Point(218, 49);
             label5.Name = "label5";
-            label5.Size = new Size(78, 20);
+            label5.Size = new Size(62, 15);
             label5.TabIndex = 4;
             label5.Text = "WhatsApp";
             // 
             // txtBoxNome
             // 
-            txtBoxNome.Location = new Point(14, 89);
-            txtBoxNome.Margin = new Padding(3, 4, 3, 4);
+            txtBoxNome.Location = new Point(12, 67);
             txtBoxNome.Name = "txtBoxNome";
-            txtBoxNome.Size = new Size(228, 27);
+            txtBoxNome.Size = new Size(200, 23);
             txtBoxNome.TabIndex = 5;
             // 
             // txtBoxEmail
             // 
-            txtBoxEmail.Location = new Point(16, 152);
-            txtBoxEmail.Margin = new Padding(3, 4, 3, 4);
+            txtBoxEmail.Location = new Point(14, 114);
             txtBoxEmail.Name = "txtBoxEmail";
-            txtBoxEmail.Size = new Size(228, 27);
+            txtBoxEmail.Size = new Size(200, 23);
             txtBoxEmail.TabIndex = 7;
             // 
             // txtBoxWhatsapp
             // 
-            txtBoxWhatsapp.Location = new Point(249, 89);
-            txtBoxWhatsapp.Margin = new Padding(3, 4, 3, 4);
+            txtBoxWhatsapp.Location = new Point(218, 67);
             txtBoxWhatsapp.Name = "txtBoxWhatsapp";
-            txtBoxWhatsapp.Size = new Size(228, 27);
+            txtBoxWhatsapp.Size = new Size(200, 23);
             txtBoxWhatsapp.TabIndex = 8;
             txtBoxWhatsapp.TextChanged += TxtBoxWhatsapp_TextChanged;
             // 
             // chkBoxEnviaMsgAniver
             // 
             chkBoxEnviaMsgAniver.AutoSize = true;
-            chkBoxEnviaMsgAniver.Location = new Point(341, 36);
-            chkBoxEnviaMsgAniver.Margin = new Padding(3, 4, 3, 4);
+            chkBoxEnviaMsgAniver.Location = new Point(298, 27);
             chkBoxEnviaMsgAniver.Name = "chkBoxEnviaMsgAniver";
-            chkBoxEnviaMsgAniver.Size = new Size(183, 24);
+            chkBoxEnviaMsgAniver.Size = new Size(147, 19);
             chkBoxEnviaMsgAniver.TabIndex = 11;
             chkBoxEnviaMsgAniver.Text = "Envia Msg Aniversário?";
             chkBoxEnviaMsgAniver.UseVisualStyleBackColor = true;
             // 
             // txtBoxCPF
             // 
-            txtBoxCPF.Location = new Point(14, 31);
-            txtBoxCPF.Margin = new Padding(3, 4, 3, 4);
+            txtBoxCPF.Location = new Point(12, 23);
             txtBoxCPF.MaxLength = 14;
             txtBoxCPF.Name = "txtBoxCPF";
-            txtBoxCPF.Size = new Size(228, 27);
+            txtBoxCPF.Size = new Size(200, 23);
             txtBoxCPF.TabIndex = 14;
             txtBoxCPF.TextChanged += TxtBoxCPF_TextChanged;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(14, 7);
+            label6.Location = new Point(12, 5);
             label6.Name = "label6";
-            label6.Size = new Size(33, 20);
+            label6.Size = new Size(28, 15);
             label6.TabIndex = 15;
             label6.Text = "CPF";
             // 
             // btnCadastrar
             // 
-            btnCadastrar.Location = new Point(14, 211);
-            btnCadastrar.Margin = new Padding(3, 4, 3, 4);
+            btnCadastrar.Location = new Point(12, 158);
             btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(166, 39);
+            btnCadastrar.Size = new Size(145, 29);
             btnCadastrar.TabIndex = 17;
             btnCadastrar.Text = "Cadastrar/Atualizar";
             btnCadastrar.UseVisualStyleBackColor = true;
@@ -191,8 +185,7 @@ namespace SMDesktop
             dtGridPacientes.ColumnHeadersHeight = 29;
             dtGridPacientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dtGridPacientes.Columns.AddRange(new DataGridViewColumn[] { CPF, NOME, DATAANIVERSARIO, CIDHD, WHATSAPP, EMAIL, ATIVO, EMITERECIBO, EMITERECIBOIR, EMITERECIBOCONVENIO, ENVIAMSGANIVERSARIO, OBSERV });
-            dtGridPacientes.Location = new Point(14, 271);
-            dtGridPacientes.Margin = new Padding(3, 4, 3, 4);
+            dtGridPacientes.Location = new Point(12, 203);
             dtGridPacientes.MultiSelect = false;
             dtGridPacientes.Name = "dtGridPacientes";
             dtGridPacientes.ReadOnly = true;
@@ -200,7 +193,7 @@ namespace SMDesktop
             dtGridPacientes.RowTemplate.Height = 25;
             dtGridPacientes.RowTemplate.ReadOnly = true;
             dtGridPacientes.ShowEditingIcon = false;
-            dtGridPacientes.Size = new Size(1591, 428);
+            dtGridPacientes.Size = new Size(1392, 321);
             dtGridPacientes.TabIndex = 18;
             dtGridPacientes.SelectionChanged += dtGridPacientes_SelectionChanged;
             // 
@@ -211,7 +204,7 @@ namespace SMDesktop
             CPF.MinimumWidth = 6;
             CPF.Name = "CPF";
             CPF.ReadOnly = true;
-            CPF.Width = 62;
+            CPF.Width = 53;
             // 
             // NOME
             // 
@@ -220,7 +213,7 @@ namespace SMDesktop
             NOME.MinimumWidth = 6;
             NOME.Name = "NOME";
             NOME.ReadOnly = true;
-            NOME.Width = 79;
+            NOME.Width = 65;
             // 
             // DATAANIVERSARIO
             // 
@@ -229,7 +222,7 @@ namespace SMDesktop
             DATAANIVERSARIO.MinimumWidth = 6;
             DATAANIVERSARIO.Name = "DATAANIVERSARIO";
             DATAANIVERSARIO.ReadOnly = true;
-            DATAANIVERSARIO.Width = 153;
+            DATAANIVERSARIO.Width = 123;
             // 
             // CIDHD
             // 
@@ -238,7 +231,7 @@ namespace SMDesktop
             CIDHD.MinimumWidth = 6;
             CIDHD.Name = "CIDHD";
             CIDHD.ReadOnly = true;
-            CIDHD.Width = 96;
+            CIDHD.Width = 79;
             // 
             // WHATSAPP
             // 
@@ -247,7 +240,7 @@ namespace SMDesktop
             WHATSAPP.MinimumWidth = 6;
             WHATSAPP.Name = "WHATSAPP";
             WHATSAPP.ReadOnly = true;
-            WHATSAPP.Width = 105;
+            WHATSAPP.Width = 85;
             // 
             // EMAIL
             // 
@@ -256,7 +249,7 @@ namespace SMDesktop
             EMAIL.MinimumWidth = 6;
             EMAIL.Name = "EMAIL";
             EMAIL.ReadOnly = true;
-            EMAIL.Width = 75;
+            EMAIL.Width = 61;
             // 
             // ATIVO
             // 
@@ -269,7 +262,7 @@ namespace SMDesktop
             ATIVO.Resizable = DataGridViewTriState.True;
             ATIVO.SortMode = DataGridViewColumnSortMode.Automatic;
             ATIVO.TrueValue = "Sim";
-            ATIVO.Width = 80;
+            ATIVO.Width = 65;
             // 
             // EMITERECIBO
             // 
@@ -282,7 +275,7 @@ namespace SMDesktop
             EMITERECIBO.Resizable = DataGridViewTriState.True;
             EMITERECIBO.SortMode = DataGridViewColumnSortMode.Automatic;
             EMITERECIBO.TrueValue = "Sim";
-            EMITERECIBO.Width = 133;
+            EMITERECIBO.Width = 106;
             // 
             // EMITERECIBOIR
             // 
@@ -295,7 +288,7 @@ namespace SMDesktop
             EMITERECIBOIR.Resizable = DataGridViewTriState.True;
             EMITERECIBOIR.SortMode = DataGridViewColumnSortMode.Automatic;
             EMITERECIBOIR.TrueValue = "Sim";
-            EMITERECIBOIR.Width = 150;
+            EMITERECIBOIR.Width = 119;
             // 
             // EMITERECIBOCONVENIO
             // 
@@ -308,7 +301,7 @@ namespace SMDesktop
             EMITERECIBOCONVENIO.Resizable = DataGridViewTriState.True;
             EMITERECIBOCONVENIO.SortMode = DataGridViewColumnSortMode.Automatic;
             EMITERECIBOCONVENIO.TrueValue = "Sim";
-            EMITERECIBOCONVENIO.Width = 199;
+            EMITERECIBOCONVENIO.Width = 160;
             // 
             // ENVIAMSGANIVERSARIO
             // 
@@ -321,7 +314,7 @@ namespace SMDesktop
             ENVIAMSGANIVERSARIO.Resizable = DataGridViewTriState.True;
             ENVIAMSGANIVERSARIO.SortMode = DataGridViewColumnSortMode.Automatic;
             ENVIAMSGANIVERSARIO.TrueValue = "Sim";
-            ENVIAMSGANIVERSARIO.Width = 190;
+            ENVIAMSGANIVERSARIO.Width = 153;
             // 
             // OBSERV
             // 
@@ -330,7 +323,7 @@ namespace SMDesktop
             OBSERV.MinimumWidth = 6;
             OBSERV.Name = "OBSERV";
             OBSERV.ReadOnly = true;
-            OBSERV.Width = 122;
+            OBSERV.Width = 99;
             // 
             // pacienteBindingSource
             // 
@@ -338,10 +331,9 @@ namespace SMDesktop
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(186, 211);
-            btnExcluir.Margin = new Padding(3, 4, 3, 4);
+            btnExcluir.Location = new Point(163, 158);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(166, 39);
+            btnExcluir.Size = new Size(145, 29);
             btnExcluir.TabIndex = 19;
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = true;
@@ -351,10 +343,9 @@ namespace SMDesktop
             // 
             chkBoxEmiteRecIR.AutoSize = true;
             chkBoxEmiteRecIR.Enabled = false;
-            chkBoxEmiteRecIR.Location = new Point(541, 85);
-            chkBoxEmiteRecIR.Margin = new Padding(3, 4, 3, 4);
+            chkBoxEmiteRecIR.Location = new Point(473, 64);
             chkBoxEmiteRecIR.Name = "chkBoxEmiteRecIR";
-            chkBoxEmiteRecIR.Size = new Size(136, 24);
+            chkBoxEmiteRecIR.Size = new Size(108, 19);
             chkBoxEmiteRecIR.TabIndex = 20;
             chkBoxEmiteRecIR.Text = "Emite Recibo IR";
             chkBoxEmiteRecIR.UseVisualStyleBackColor = true;
@@ -364,10 +355,9 @@ namespace SMDesktop
             // 
             chkBoxEmiteRecConvenio.AutoSize = true;
             chkBoxEmiteRecConvenio.Enabled = false;
-            chkBoxEmiteRecConvenio.Location = new Point(541, 119);
-            chkBoxEmiteRecConvenio.Margin = new Padding(3, 4, 3, 4);
+            chkBoxEmiteRecConvenio.Location = new Point(473, 89);
             chkBoxEmiteRecConvenio.Name = "chkBoxEmiteRecConvenio";
-            chkBoxEmiteRecConvenio.Size = new Size(185, 24);
+            chkBoxEmiteRecConvenio.Size = new Size(149, 19);
             chkBoxEmiteRecConvenio.TabIndex = 21;
             chkBoxEmiteRecConvenio.Text = "Emite Recibo Convênio";
             chkBoxEmiteRecConvenio.UseVisualStyleBackColor = true;
@@ -376,10 +366,9 @@ namespace SMDesktop
             // chkBoxEmiteRecibo
             // 
             chkBoxEmiteRecibo.AutoSize = true;
-            chkBoxEmiteRecibo.Location = new Point(541, 49);
-            chkBoxEmiteRecibo.Margin = new Padding(3, 4, 3, 4);
+            chkBoxEmiteRecibo.Location = new Point(473, 37);
             chkBoxEmiteRecibo.Name = "chkBoxEmiteRecibo";
-            chkBoxEmiteRecibo.Size = new Size(119, 24);
+            chkBoxEmiteRecibo.Size = new Size(95, 19);
             chkBoxEmiteRecibo.TabIndex = 22;
             chkBoxEmiteRecibo.Text = "Emite Recibo";
             chkBoxEmiteRecibo.UseVisualStyleBackColor = true;
@@ -388,30 +377,27 @@ namespace SMDesktop
             // chkBoxAtivo
             // 
             chkBoxAtivo.AutoSize = true;
-            chkBoxAtivo.Location = new Point(541, 16);
-            chkBoxAtivo.Margin = new Padding(3, 4, 3, 4);
+            chkBoxAtivo.Location = new Point(473, 12);
             chkBoxAtivo.Name = "chkBoxAtivo";
-            chkBoxAtivo.Size = new Size(66, 24);
+            chkBoxAtivo.Size = new Size(54, 19);
             chkBoxAtivo.TabIndex = 23;
             chkBoxAtivo.Text = "Ativo";
             chkBoxAtivo.UseVisualStyleBackColor = true;
             // 
             // btnIrParaEmissaoRecibo
             // 
-            btnIrParaEmissaoRecibo.Location = new Point(359, 211);
-            btnIrParaEmissaoRecibo.Margin = new Padding(3, 4, 3, 4);
+            btnIrParaEmissaoRecibo.Location = new Point(314, 158);
             btnIrParaEmissaoRecibo.Name = "btnIrParaEmissaoRecibo";
-            btnIrParaEmissaoRecibo.Size = new Size(166, 39);
+            btnIrParaEmissaoRecibo.Size = new Size(145, 29);
             btnIrParaEmissaoRecibo.TabIndex = 24;
             btnIrParaEmissaoRecibo.Text = "Detalhes";
             btnIrParaEmissaoRecibo.UseVisualStyleBackColor = true;
             // 
             // btnLimpar
             // 
-            btnLimpar.Location = new Point(531, 211);
-            btnLimpar.Margin = new Padding(3, 4, 3, 4);
+            btnLimpar.Location = new Point(465, 158);
             btnLimpar.Name = "btnLimpar";
-            btnLimpar.Size = new Size(166, 39);
+            btnLimpar.Size = new Size(145, 29);
             btnLimpar.TabIndex = 25;
             btnLimpar.Text = "Limpar";
             btnLimpar.UseVisualStyleBackColor = true;
@@ -421,81 +407,78 @@ namespace SMDesktop
             // 
             lblAviso.AutoSize = true;
             lblAviso.ForeColor = Color.Red;
-            lblAviso.Location = new Point(1254, 247);
+            lblAviso.Location = new Point(1097, 185);
             lblAviso.Name = "lblAviso";
-            lblAviso.Size = new Size(0, 20);
+            lblAviso.Size = new Size(0, 15);
             lblAviso.TabIndex = 26;
             lblAviso.Visible = false;
             // 
             // txtBoxDtAniversario
             // 
-            txtBoxDtAniversario.Location = new Point(251, 31);
-            txtBoxDtAniversario.Margin = new Padding(3, 4, 3, 4);
+            txtBoxDtAniversario.Location = new Point(220, 23);
             txtBoxDtAniversario.MaxLength = 8;
             txtBoxDtAniversario.Name = "txtBoxDtAniversario";
             txtBoxDtAniversario.PlaceholderText = "__/__/____";
-            txtBoxDtAniversario.Size = new Size(82, 27);
+            txtBoxDtAniversario.Size = new Size(72, 23);
             txtBoxDtAniversario.TabIndex = 27;
             txtBoxDtAniversario.TextChanged += TxtBoxDtAniversario_TextChanged;
             // 
             // txtCidHd
             // 
-            txtCidHd.Location = new Point(251, 152);
-            txtCidHd.Margin = new Padding(3, 4, 3, 4);
+            txtCidHd.Location = new Point(220, 114);
             txtCidHd.Name = "txtCidHd";
-            txtCidHd.Size = new Size(226, 27);
+            txtCidHd.Size = new Size(198, 23);
             txtCidHd.TabIndex = 28;
             // 
             // lblCidHd
             // 
             lblCidHd.AutoSize = true;
-            lblCidHd.Location = new Point(251, 128);
+            lblCidHd.Location = new Point(220, 96);
             lblCidHd.Name = "lblCidHd";
-            lblCidHd.Size = new Size(67, 20);
+            lblCidHd.Size = new Size(54, 15);
             lblCidHd.TabIndex = 29;
             lblCidHd.Text = "CID/H.D.";
             // 
             // txtObserv
             // 
-            txtObserv.Location = new Point(718, 89);
-            txtObserv.Margin = new Padding(3, 4, 3, 4);
+            txtObserv.Location = new Point(628, 67);
             txtObserv.Name = "txtObserv";
-            txtObserv.Size = new Size(463, 152);
+            txtObserv.Size = new Size(406, 115);
             txtObserv.TabIndex = 30;
             txtObserv.Text = "";
             // 
             // lblObs
             // 
             lblObs.AutoSize = true;
-            lblObs.Location = new Point(718, 65);
+            lblObs.Location = new Point(628, 49);
             lblObs.Name = "lblObs";
-            lblObs.Size = new Size(93, 20);
+            lblObs.Size = new Size(74, 15);
             lblObs.TabIndex = 31;
             lblObs.Text = "Observações";
             // 
             // btnBuscar
             // 
             btnBuscar.Image = (Image)resources.GetObject("btnBuscar.Image");
-            btnBuscar.Location = new Point(1002, 25);
-            btnBuscar.Margin = new Padding(3, 4, 3, 4);
+            btnBuscar.Location = new Point(877, 19);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(29, 29);
+            btnBuscar.Size = new Size(25, 22);
             btnBuscar.TabIndex = 32;
             btnBuscar.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(718, 25);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Location = new Point(628, 19);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(277, 27);
+            textBox1.Size = new Size(243, 23);
             textBox1.TabIndex = 33;
             // 
             // CadastroPacientes
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1618, 720);
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ClientSize = new Size(1416, 540);
             Controls.Add(textBox1);
             Controls.Add(btnBuscar);
             Controls.Add(lblObs);
@@ -523,7 +506,6 @@ namespace SMDesktop
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "CadastroPacientes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CadastroPacientes";
